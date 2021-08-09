@@ -12,7 +12,7 @@ PLUGIN_METADATA = {
 		'hai122',
 		'linstar'
     ],
-	'link': 'https://github.com/linstar-fxt/WhoIsDied-MCDR',
+	'link': 'https://github.com/linstar-fxt/MyMCDRPlugins/tree/main/WhoIsDied',
     'dependencies' :  {
 	    'mcdreforged': '>=1.0.0',
 	    'minecraft_data_api': '*'
