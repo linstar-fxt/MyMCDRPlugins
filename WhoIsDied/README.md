@@ -2,7 +2,7 @@
 
 A MCDR died pos plugin  \ 一个死亡广播插件  
 
-Works with **MCDR1.x** & **minecraft_data_api**
+Works with **MCDR1.x & MCDR2.x** & **minecraft_data_api**
 
 When the player dies, this plugin will disclose your death pos.  
 
