@@ -1,7 +1,6 @@
 import time
 from mcdreforged.api.all import *
 from mcdreforged.plugin.server_interface import ServerInterface
-from mcdreforged.info import Info
 
 PLUGIN_METADATA = {
     'id': 'leaderreforged',
