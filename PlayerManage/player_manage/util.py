@@ -1,14 +1,15 @@
 import requests, os
-
+from urllib.request import urlopen
 import ujson as json
+from uuid import UUID
 
 from nbt import nbt
 from player_manage.config import Config
 
 def get_uuid(name:str):
     try:
-        data = requests.get(url=f'https://playerdb.co/api/player/minecraft/{name}').json() #Online
-        return str(data['data']['player']['id'])
+        data = requests.get(url=f'https://api.mojang.com/users/profiles/minecraft/{name}').json() #Online
+        return str(UUID(data['id']))
     except Exception as e:
         print(e)
         data = requests.get(url=f'http://tools.glowingmines.eu/convertor/nick/{name}').json() #Offline

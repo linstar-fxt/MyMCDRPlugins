@@ -36,13 +36,13 @@ def sendHelp(src:CommandSource):
     prefix = config.prefix
     msg = f'''
     ------------§aCommand Useage§r---------------
-    | {prefix} - Show this help message
-    | {prefix} list <bot/player/all>- List all players
-    | {prefix} listol <bot/player/all>- List all online players
-    | {prefix} query <Player> - Query player infomation
-    | {prefix} board <bot/player/all>- Player Online Time Leaderboard
-    | {prefix} stats <player> - Show all the points
-    | {prefix} shadow <player> - Let bot look in the same direction as you
+    | {prefix} - 显示这条帮助命令
+    | {prefix} list <bot/player/all> - 列出玩家
+    | {prefix} listol <bot/player/all>- 列出在线玩家
+    | {prefix} query <Player> - 查询玩家信息/操作面板
+    | {prefix} board <bot/player/all>- 玩家上线时间排行
+    | {prefix} stats <player> - 查询玩家的统计分数
+    | {prefix} shadow <player> - 让bot和你朝向相同
     '''
     src.reply(msg)
 
@@ -59,7 +59,7 @@ def sendList(src:CommandSource,type:str,online=False):
     except:
         src.reply("错误的参数")
         return
-    if not type:
+    if type is None:
         for item in session.query(Player.name).all():
             players.append(item[0])
     else:
@@ -112,7 +112,6 @@ def send_player_data(src:CommandSource,name:str):
             RText('     level:§a{}'.format(str(playerData['XpLevel']))),
             RText('-饱食度:§a{}'.format(str(playerData['foodLevel'])))
         ),
-        #RText('累计上线时间:§b%d:%02d:%02d'%(h,m,s)),
         RText('累计上线时间:§b{}'.format(str(timedelta(seconds=playTime)))),
         RText('最近一次上线时间:§b{}'.format((thisPlayer.lastjoin + timedelta(hours=int(config.timezone))).strftime("%Y-%m-%d %H:%M:%S"))),
         RText('平均每次上线游玩时间:§b{}'.format(str(timedelta(seconds=leaveGame)))),
@@ -137,7 +136,7 @@ def send_player_data(src:CommandSource,name:str):
             RText("[M]" if thisPlayer.is_bot else '').set_hover_text(
                 "让假人面朝方向和你一样"
             ).set_click_event(
-                RAction.run_command,f'!!player {name} -shadow'
+                RAction.run_command,f'{config.prefix} shadow {name}'
             )
         )
     ]
@@ -205,7 +204,7 @@ def send_player_board(src:CommandSource,type:str):
     except:
         src.reply("错误的参数")
         return
-    if not type:
+    if type is None:
         for item in session.query(Player.name,Player.uuid).all():
             players[item[1]] = item[0]
     else:
