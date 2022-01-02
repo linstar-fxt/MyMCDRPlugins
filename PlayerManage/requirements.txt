@@ -1,0 +1,4 @@
+mcdreforged>=2.0.0b3
+hjson
+flask
+parse

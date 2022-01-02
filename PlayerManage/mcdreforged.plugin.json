@@ -1,0 +1,17 @@
+{
+	"id": "player_manage",
+	"version": "1.0.0",
+	"name": "Player Manage",
+	"description": {
+		"en_us": "A MCDReforged plugin to help with managing players",
+		"zh_cn": "帮助你管理玩家"
+	},
+	"author": [
+		"hail122"
+	],
+	"link": "https://github.com/linstar-fxt",
+	"dependencies": {
+		"mcdreforged": ">=2.0.0-beta.3",
+		"minecraft_data_api": "*"
+	}
+}
