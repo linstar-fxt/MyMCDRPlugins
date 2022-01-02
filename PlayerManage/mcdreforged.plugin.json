@@ -9,7 +9,7 @@
 	"author": [
 		"hail122"
 	],
-	"link": "https://github.com/linstar-fxt",
+	"link": "https://github.com/linstar-fxt/MyMCDRPlugins/blob/main/PlayerManage/",
 	"dependencies": {
 		"mcdreforged": ">=2.0.0-beta.3",
 		"minecraft_data_api": "*"
