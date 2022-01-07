@@ -23,7 +23,7 @@ def get_stat_data(uuid: str, filter=None):
 获取储存在Stats文件夹下的玩家得分，其中filter为None时，返回data['stats']，为key时，返回列表[data['stats'][key],所有值的和],为两层key时，返回对应的值    
 示例： 获取minecraft:deaths
 ```python
-def get_stat_data(uuid,"custom.deaths")
+get_stat_data(uuid,"custom.deaths")
 ```
 
 
