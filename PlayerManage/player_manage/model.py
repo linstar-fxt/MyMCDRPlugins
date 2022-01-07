@@ -14,9 +14,8 @@ class Player(Base):
     firstjoin = Column(DateTime(), index=True)
     is_bot = Column(Boolean(), default=0)
 
-basedir = os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
 prefix = 'sqlite:///' if sys.platform.startswith('win') else 'sqlite:////'
-engine = create_engine(prefix + os.path.join(basedir, 'PlayerAPI.db') + '?check_same_thread=False&timeout=20')
+engine = create_engine(prefix + './PlayerManage.db' + '?check_same_thread=False&timeout=20')
 metaData = MetaData(engine)
 session = Session(engine)
 
